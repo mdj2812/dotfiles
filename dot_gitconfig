@@ -1,0 +1,8 @@
+[user]
+	email = mdj2812@hotmail.com
+	name = mdj2812
+[core]
+	editor = nvim
+[http]
+[init]
+	defaultBranch = main
