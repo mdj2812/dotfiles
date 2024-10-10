@@ -3,6 +3,21 @@
 	name = mdj2812
 [core]
 	editor = nvim
-[http]
 [init]
 	defaultBranch = main
+[http]
+	postBuffer = 157286400
+	version = HTTP/1.1
+[credential]
+	helper = store
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://huggingface.co"]
+	provider = generic
