@@ -1,0 +1,22 @@
+model = "deepseek-v4-flash"
+model_provider = "deepseek"
+preferred_auth_method = "apikey"
+forced_login_method = "api"
+model_reasoning_effort = "high"
+model_catalog_json = "~/.codex/models.json"
+tui.vim_mode_default = true
+
+[model_providers.deepseek]
+name = "deepseek"
+base_url = "https://api.deepseek.com/"
+wire_api = "responses"
+env_key = "DEEPSEEK_API_KEY"
+
+[projects."/home/mdj2812"]
+trust_level = "trusted"
+
+[projects."/home/mdj2812/.config/nvim"]
+trust_level = "trusted"
+
+[projects."/home/mdj2812/.config/ghostty"]
+trust_level = "trusted"
