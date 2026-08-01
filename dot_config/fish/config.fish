@@ -63,3 +63,6 @@ end
 
 # Add ~/bin (chezmoi) to PATH
 fish_add_path ~/bin
+
+# Add ~/.local/bin to PATH
+fish_add_path ~/.local/bin
