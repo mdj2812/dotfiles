@@ -1,2 +1,5 @@
 # fish_variables is runtime state managed by fish itself
 .config/fish/fish_variables
+
+# Keep API keys out of the dotfiles repo
+.config/fish/conf.d/secrets.fish
