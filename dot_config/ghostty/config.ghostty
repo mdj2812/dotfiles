@@ -1,2 +1,26 @@
+language = en
 theme = Catppuccin Mocha
 font-family = JetBrainsMono Nerd Font Mono
+
+# Look & feel
+font-size = 12
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
+window-padding-color = extend
+
+# Shell integration (fish)
+shell-integration = fish
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+cursor-style = block
+cursor-style-blink = false
+
+# Quality of life
+mouse-hide-while-typing = true
+confirm-close-surface = true
+scrollback-limit = 100000
+mouse-scroll-multiplier = 3
+
+# KDE window chrome
+gtk-titlebar = false
+window-theme = dark
