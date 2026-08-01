@@ -1,0 +1,2 @@
+# fish_variables is runtime state managed by fish itself
+.config/fish/fish_variables
