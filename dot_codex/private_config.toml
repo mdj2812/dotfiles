@@ -20,3 +20,14 @@ trust_level = "trusted"
 
 [projects."/home/mdj2812/.config/ghostty"]
 trust_level = "trusted"
+
+[projects."/home/mdj2812/.local/share/nvim/lazy/codesnap.nvim"]
+trust_level = "trusted"
+
+[features]
+hooks = true
+
+[hooks.state]
+
+[hooks.state."/home/mdj2812/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:dd9ffd52f5f3729966a2ab91d03431892c247b21dcb5ca5a77f734fc0c238969"
