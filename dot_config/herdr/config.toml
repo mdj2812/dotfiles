@@ -2,3 +2,28 @@ onboarding = false
 
 [experimental]
 kitty_graphics = true
+
+[ui]
+agent_panel_sort = "priority"
+
+[theme]
+name = "catppuccin-latte"
+auto_switch = false
+
+[theme.custom]
+accent = "#cba6f7"
+panel_bg = "#313244"
+surface0 = "#3a3b50"
+surface1 = "#42435c"
+surface_dim = "#161622"
+overlay0 = "#646883"
+overlay1 = "#a3b4eb"
+text = "#cdd6f4"
+subtext0 = "#a3b4eb"
+mauve = "#f5c2e7"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+red = "#f38ba8"
+blue = "#89b4fa"
+teal = "#94e2d5"
+peach = "#f3a28b"

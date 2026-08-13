@@ -1,0 +1,8 @@
+app-dev.lizardbyte.app.Sunshine.service
+arch-update.timer
+p11-kit-server.socket
+pipewire-pulse.socket
+pipewire.socket
+speech-dispatcher.socket
+wireplumber.service
+xdg-user-dirs.service

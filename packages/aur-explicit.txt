@@ -1,0 +1,5 @@
+howdy-git
+noctalia-git
+rustdesk-bin
+supersonic-desktop-bin
+wechat-bin

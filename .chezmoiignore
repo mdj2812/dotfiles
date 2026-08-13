@@ -3,3 +3,8 @@
 
 # Keep API keys out of the dotfiles repo
 .config/fish/conf.d/secrets.fish
+
+# Repository documentation and rebuild inventories are not home-directory files
+README.md
+packages/**
+services/**

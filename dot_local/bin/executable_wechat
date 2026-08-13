@@ -1,0 +1,3 @@
+#!/bin/sh
+export QT_IM_MODULE=fcitx
+exec /usr/bin/wechat "$@"

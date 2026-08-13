@@ -1,0 +1,9 @@
+[theme.templates.user.herdr]
+input_path = "{{ .chezmoi.homeDir }}/Share/workspace/noctalia/community-templates/herdr/herdr-colors.toml"
+output_path = "$XDG_CONFIG_HOME/herdr/noctalia-colors.toml"
+post_hook = "bash '{{ .chezmoi.homeDir }}/Share/workspace/noctalia/community-templates/herdr/apply.sh'"
+
+[theme.templates.user.supersonic]
+input_path = "{{ .chezmoi.homeDir }}/Share/workspace/noctalia/community-templates/supersonic/noctalia.toml"
+output_path = "$XDG_CONFIG_HOME/supersonic/themes/noctalia.toml"
+post_hook = "bash '{{ .chezmoi.homeDir }}/Share/workspace/noctalia/community-templates/supersonic/apply.sh' native"
