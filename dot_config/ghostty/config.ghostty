@@ -24,3 +24,5 @@ mouse-scroll-multiplier = 3
 # KDE window chrome
 gtk-titlebar = false
 window-theme = dark
+
+app-notifications = no-clipboard-copy
