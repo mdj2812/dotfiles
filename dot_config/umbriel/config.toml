@@ -12,7 +12,16 @@
 files = ["noctalia.toml"]
 
 [general]
-autostart = ["noctalia", "fcixt5"]
+autostart = [
+  "noctalia",
+  "fcitx5",
+  "zen-browser",
+  "vesktop",
+  "element-desktop",
+  "wechat",
+  "thunderbird",
+  "ghostty",
+]
 # mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
 xwayland = true                # requires restart to change
 show_cheatsheet = true         # show keybinds overlay on startup
@@ -122,10 +131,8 @@ center_underfull_strip = true  # center the strip whenever it is narrower than t
 # mode = "2560x1440@144"
 # position = [0, 0]
 scale = 1.50
-vrr = "always"            # "disabled" (default), "always", or "fullscreen"
-# enabled = true                # false powers the monitor off and removes it from the desktop
-# Dynamic workspaces are the default; use a count or name list for static workspaces.
-# workspaces = 5
+vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
+workspaces = ["browser", "comms", "term"]
 
 # Input ----------------------------------------------------------------------
 
@@ -180,7 +187,7 @@ hide_timeout_ms = 0            # 0-3600000, 0 disables hiding
 follows_mouse = true
 # Refuse hover focus when revealing the window would scroll further than this,
 # measured in viewport widths (1.0 = one full screen). Omit for no limit.
-# follows_mouse_max_scroll = 0.5
+follows_mouse_max_scroll = 0.5
 
 # Keybinds (see docs/user/keybinds.md) --------------------------------------
 
@@ -258,12 +265,35 @@ follows_mouse = true
 
 [[window_rule]]
 match.app_id = "^com\\.mitchellh\\.ghostty$"
+default_workspace = 3
 default_floating = true
 default_size = [1200, 900]
 
 [[window_rule]]
 match.app_id = "^zen$"
+default_workspace = 1
 default_width = 1.0
+default_focused = false
+
+[[window_rule]]
+match.app_id = "^vesktop$"
+default_workspace = 2
+default_focused = false
+
+[[window_rule]]
+match.app_id = "^Element$"
+default_workspace = 2
+default_focused = false
+
+[[window_rule]]
+match.app_id = "^org\\.mozilla\\.Thunderbird$"
+default_workspace = 2
+default_focused = false
+
+[[window_rule]]
+match.app_id = "^wechat$"
+default_workspace = 2
+default_focused = false
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
