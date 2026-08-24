@@ -88,6 +88,28 @@ hard-coded `render-drm-device`.
 healthy. The reinstall backup on that mount is not a substitute for a separate
 NAS backup.
 
+Wake-critical read-only assets under Share (wallpapers and avatar) are mirrored
+one-way to `~/.cache/share-cache` by `~/.local/bin/share-cache-sync`. Share
+remains the source of truth; the cache is for fast local reads after resume.
+
+After applying dotfiles:
+
+```sh
+share-cache-sync
+systemctl --user daemon-reload
+systemctl --user enable --now share-cache-sync.timer share-cache-sync-wake.service
+```
+
+Point Noctalia wallpaper and avatar paths at `~/.cache/share-cache/Pictures/...`
+instead of `~/Share/Pictures/...`. Theme templates and workspace files should
+keep using `~/Share/workspace/...` directly.
+
+Optional earliest resume sync (requires sudo once per machine):
+
+```sh
+sudo ~/.local/share/share-cache/install-system-sleep-hook.sh
+```
+
 ## Restore verification
 
 Before wiping and again after installation:

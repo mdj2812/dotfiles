@@ -1,0 +1,7 @@
+[Unit]
+Description=Refresh Share cache after sleep
+After=sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/share-cache-sync

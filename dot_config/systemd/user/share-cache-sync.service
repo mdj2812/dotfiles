@@ -1,0 +1,8 @@
+[Unit]
+Description=Sync wake-critical Share paths to local cache
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/share-cache-sync

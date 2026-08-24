@@ -1,5 +1,6 @@
 app-dev.lizardbyte.app.Sunshine.service
 arch-update.timer
+share-cache-sync.timer
 p11-kit-server.socket
 pipewire-pulse.socket
 pipewire.socket

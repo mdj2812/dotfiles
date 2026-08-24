@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Mirror wake-critical Share paths from NFS to a local cache.
+set -euo pipefail
+
+readonly NFS_ROOT="{{ .chezmoi.homeDir }}/Share"
+readonly CACHE_ROOT="${XDG_CACHE_HOME:-$HOME/.cache}/share-cache"
+readonly LOG_TAG="share-cache-sync"
+
+log() {
+  printf '[%s] %s\n' "$LOG_TAG" "$*"
+}
+
+ensure_nfs() {
+  if ! timeout 15 bash -c "test -r '${NFS_ROOT}/Pictures/wallpapers'" 2>/dev/null; then
+    log "Share is not reachable; keeping the existing local cache"
+    return 1
+  fi
+  return 0
+}
+
+mkdir -p \
+  "${CACHE_ROOT}/Pictures/wallpapers" \
+  "${CACHE_ROOT}/Pictures/avatar"
+
+if ! ensure_nfs; then
+  exit 0
+fi
+
+rsync -a --delete \
+  "${NFS_ROOT}/Pictures/wallpapers/" \
+  "${CACHE_ROOT}/Pictures/wallpapers/"
+
+rsync -a \
+  "${NFS_ROOT}/Pictures/avatar/" \
+  "${CACHE_ROOT}/Pictures/avatar/"
+
+log "synced wallpapers and avatar to ${CACHE_ROOT}"

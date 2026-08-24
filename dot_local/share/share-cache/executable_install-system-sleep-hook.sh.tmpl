@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Installs a system sleep hook so the cache is refreshed as early as possible on resume.
+set -euo pipefail
+
+if [[ ${EUID} -ne 0 ]]; then
+  echo "Run with sudo: sudo $0" >&2
+  exit 1
+fi
+
+install -m 755 "{{ .chezmoi.homeDir }}/.local/bin/share-cache-sync" /usr/local/bin/share-cache-sync
+cat >/etc/systemd/system-sleep/share-cache-sync <<'EOF'
+#!/bin/sh
+case "$1/$2" in
+  post/*)
+    /usr/local/bin/share-cache-sync
+    ;;
+esac
+EOF
+chmod 755 /etc/systemd/system-sleep/share-cache-sync
+echo "Installed /etc/systemd/system-sleep/share-cache-sync"
