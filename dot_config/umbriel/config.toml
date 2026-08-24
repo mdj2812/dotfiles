@@ -9,7 +9,7 @@
 # generated colors here.
 
 [include]
-files = ["noctalia.toml"]
+files = ["noctalia.toml", "laptop.toml"]
 
 [general]
 autostart = [
@@ -126,13 +126,7 @@ center_underfull_strip = true  # center the strip whenever it is narrower than t
 # layout.scrolling.center_underfull_strip = false
 
 # Outputs (see docs/user/outputs.md) ----------------------------------------
-
-[output."eDP-2"]
-# mode = "2560x1440@144"
-# position = [0, 0]
-scale = 1.50
-vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
-workspaces = ["browser", "term", "comms"]
+# Per-machine output settings live in laptop.toml or dock.toml.
 
 # Input ----------------------------------------------------------------------
 
@@ -233,10 +227,6 @@ follows_mouse_max_scroll = 0.5
 "XF86AudioNext" = "spawn:playerctl next"
 "XF86AudioPrev" = "spawn:playerctl previous"
 
-# Brightness
-"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up eDP-2 10"
-"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down eDP-2 10"
-
 # Output, workspace, and window movement actions.
 "Mod+Comma" = "workspace-previous"
 "Mod+Period" = "workspace-next"
@@ -262,38 +252,6 @@ follows_mouse_max_scroll = 0.5
 # default_position = { x = 0, y = 0, anchor = "bottom_right" }
 # default_focused = false
 # default_pinned = true
-
-[[window_rule]]
-match.app_id = "^com\\.mitchellh\\.ghostty$"
-default_workspace = 2
-default_floating = true
-default_size = [1200, 900]
-
-[[window_rule]]
-match.app_id = "^zen$"
-default_workspace = 1
-default_width = 1.0
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^vesktop$"
-default_workspace = 3
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^Element$"
-default_workspace = 3
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^org\\.mozilla\\.Thunderbird$"
-default_workspace = 3
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^wechat$"
-default_workspace = 3
-default_focused = false
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
