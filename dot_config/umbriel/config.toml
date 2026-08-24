@@ -257,6 +257,15 @@ follows_mouse = true
 # default_pinned = true
 
 [[window_rule]]
+match.app_id = "^com\\.mitchellh\\.ghostty$"
+default_floating = true
+default_size = [1200, 900]
+
+[[window_rule]]
+match.app_id = "^zen$"
+default_width = 1.0
+
+[[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
 default_size = [1020, 900]
