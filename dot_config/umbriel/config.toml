@@ -132,7 +132,7 @@ center_underfull_strip = true  # center the strip whenever it is narrower than t
 # position = [0, 0]
 scale = 1.50
 vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
-workspaces = ["browser", "comms", "term"]
+workspaces = ["browser", "term", "comms"]
 
 # Input ----------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ follows_mouse_max_scroll = 0.5
 
 [[window_rule]]
 match.app_id = "^com\\.mitchellh\\.ghostty$"
-default_workspace = 3
+default_workspace = 2
 default_floating = true
 default_size = [1200, 900]
 
@@ -277,22 +277,22 @@ default_focused = false
 
 [[window_rule]]
 match.app_id = "^vesktop$"
-default_workspace = 2
+default_workspace = 3
 default_focused = false
 
 [[window_rule]]
 match.app_id = "^Element$"
-default_workspace = 2
+default_workspace = 3
 default_focused = false
 
 [[window_rule]]
 match.app_id = "^org\\.mozilla\\.Thunderbird$"
-default_workspace = 2
+default_workspace = 3
 default_focused = false
 
 [[window_rule]]
 match.app_id = "^wechat$"
-default_workspace = 2
+default_workspace = 3
 default_focused = false
 
 [[window_rule]]
