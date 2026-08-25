@@ -9,18 +9,18 @@
 # generated colors here.
 
 [include]
-files = ["noctalia.toml", "laptop.toml"]
+files = ["dock.toml", "noctalia.toml"]
 
 [general]
 autostart = [
   "noctalia",
   "fcitx5",
   "zen-browser",
+  "ghostty",
   "vesktop",
   "element-desktop",
-  "wechat",
   "thunderbird",
-  "ghostty",
+  "wechat",
 ]
 # mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
 xwayland = true                # requires restart to change
@@ -234,6 +234,9 @@ follows_mouse_max_scroll = 0.5
 "Mod+Shift+Period" = "window-move-to-workspace-next"
 "Mod+Ctrl+H" = "output-focus-left"
 "Mod+Minus" = "window-modify-width:-0.1"
+"Mod+Equal" = "window-modify-width:0.1"
+"Mod+Shift+Equal" = "window-cycle-width"
+"Mod+Ctrl+F" = "window-toggle-maximize"
 "Mod+C" = "window-center"
 "Mod+Shift+T" = "workspace-set-layout:toggle"
 
