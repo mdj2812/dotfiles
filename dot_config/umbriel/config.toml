@@ -15,12 +15,6 @@ files = ["laptop.toml", "noctalia.toml"]
 autostart = [
   "noctalia",
   "fcitx5",
-  "zen-browser",
-  "ghostty",
-  "vesktop",
-  "element-desktop",
-  "thunderbird",
-  "wechat",
 ]
 # mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
 xwayland = true                # requires restart to change
@@ -216,8 +210,8 @@ follows_mouse_max_scroll = 0.5
 "Mod+L" = "spawn:noctalia msg session lock"
 
 # Volume (via Noctalia OSD)
-"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up 2%"
-"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down 2%"
+"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up 5%"
+"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down 5%"
 "XF86AudioMute" = "spawn:noctalia msg volume-mute"
 "XF86AudioMicMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 

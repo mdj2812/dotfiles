@@ -5,7 +5,7 @@
 # position = [0, 0]
 scale = 1.50
 vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
-workspaces = ["browser", "term", "comms"]
+workspaces = ["browser", "term", "comms", "games"]
 
 [keybinds]
 "XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up eDP-2 10"
