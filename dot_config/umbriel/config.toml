@@ -9,7 +9,7 @@
 # generated colors here.
 
 [include]
-files = ["dock.toml", "noctalia.toml"]
+files = ["laptop.toml", "noctalia.toml"]
 
 [general]
 autostart = [
@@ -52,7 +52,6 @@ prefer_no_csd = true
 border_width = 1               # 0-100
 outer_border_width = 0         # 0-100
 corner_radius = 10             # 0-500
-animation_ms = 250             # 1-10000
 # border_focused = "#7AA3FFFF"
 # border_unfocused = "#292933FF"
 # scratchpad_border_focused = "#E5C07BFF"
@@ -257,6 +256,10 @@ follows_mouse_max_scroll = 0.5
 # default_pinned = true
 
 [[window_rule]]
+match.app_id = "zen"
+default_width = 1.0
+
+[[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
 default_size = [1020, 900]
@@ -265,6 +268,20 @@ default_size = [1020, 900]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
 default_size = [800, 600]
+
+[[window_rule]]
+match.app_id = "ghostty"
+default_floating = true
+default_size = [1600, 1000]
+blur = true
+blur_optimized = true
+
+[[window_rule]]
+match.app_id = "kitty"
+default_floating = true
+default_size = [1600, 1000]
+blur = true
+blur_optimized = true
 
 # Layer rules (see docs/user/rules.md#layer-rules) ---------------------------
 

@@ -10,35 +10,3 @@ workspaces = ["browser", "term", "comms"]
 [keybinds]
 "XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up eDP-2 10"
 "XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down eDP-2 10"
-
-[[window_rule]]
-match.app_id = "^com\\.mitchellh\\.ghostty$"
-default_workspace = 2
-default_floating = true
-default_size = [1600, 1000]
-
-[[window_rule]]
-match.app_id = "^zen$"
-default_workspace = 1
-default_width = 1.0
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^vesktop$"
-default_workspace = 3
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^Element$"
-default_workspace = 3
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^org\\.mozilla\\.Thunderbird$"
-default_workspace = 3
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^wechat$"
-default_workspace = 3
-default_focused = false

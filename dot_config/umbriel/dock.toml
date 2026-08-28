@@ -9,7 +9,7 @@ mode = "2560x1440@60"
 position = [0, 307]
 scale = 1.50
 vrr = "fullscreen"
-workspaces = ["browser", "term", "comms"]
+workspaces = ["browser", "term", "comms", "game"]
 
 [output."DP-10"]
 # LECOO M2712Q — portrait side panel (right of DP-11)
@@ -18,49 +18,8 @@ position = [1707, 0]
 scale = 1.50
 transform = "270"
 vrr = "fullscreen"
-workspaces = ["term2", "comms2"]
+workspaces = ["browser2", "comms2"]
 
 [keybinds]
 "XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up DP-11 10"
 "XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down DP-11 10"
-
-[[window_rule]]
-match.app_id = "^com\\.mitchellh\\.ghostty$"
-default_output = "DP-11"
-default_workspace = "term"
-default_width = 1.0
-
-[[window_rule]]
-match.app_id = "^zen$"
-default_output = "DP-11"
-default_workspace = "browser"
-default_width = 1.0
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^vesktop$"
-default_output = "DP-11"
-default_workspace = "comms"
-default_width = 0.55
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^Element$"
-default_output = "DP-11"
-default_workspace = "comms"
-default_width = 0.5
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^org\\.mozilla\\.Thunderbird$"
-default_output = "DP-10"
-default_workspace = "comms2"
-default_width = 0.5
-default_focused = false
-
-[[window_rule]]
-match.app_id = "^wechat$"
-default_output = "DP-10"
-default_workspace = "comms2"
-default_width = 0.5
-default_focused = false
