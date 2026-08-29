@@ -1,0 +1,6 @@
+[services][com.mitchellh.ghostty.desktop]
+_launch=none
+new-window=none
+
+[services][kitty.desktop]
+_launch=Ctrl+Alt+T,Ctrl+Alt+T,Launch Kitty
