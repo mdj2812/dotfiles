@@ -208,6 +208,7 @@ follows_mouse_max_scroll = 0.5
 "Mod+Shift+W" = "spawn:noctalia msg desktop-widgets-toggle-edit"
 "Mod+Escape" = "spawn:noctalia msg panel-toggle session"
 "Mod+L" = "spawn:noctalia msg session lock"
+"Alt+Tab" = "spawn:noctalia msg window-switcher"
 
 # Volume (via Noctalia OSD)
 "XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up 5%"
