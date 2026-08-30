@@ -7,7 +7,7 @@ window-padding-x = 8
 window-padding-y = 6
 window-padding-balance = true
 window-padding-color = extend
-background-opacity = 0.85
+background-opacity = 0.65
 background-blur = true
 
 # Shell integration (fish)
@@ -24,7 +24,7 @@ mouse-scroll-multiplier = precision:0.5,discrete:3
 
 # KDE window chrome
 gtk-titlebar = false
-window-theme = dark
+window-theme = auto
 
 app-notifications = no-clipboard-copy
 theme = noctalia
