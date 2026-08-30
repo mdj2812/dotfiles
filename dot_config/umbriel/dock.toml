@@ -1,5 +1,8 @@
 # Dock-specific Umbriel settings (dual external monitors, lid closed).
 
+[layout]
+mode = "dwindle"
+
 [output."eDP-2"]
 enabled = false
 

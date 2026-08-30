@@ -1,5 +1,8 @@
 # Laptop-specific Umbriel settings (built-in eDP-2 panel).
 
+[layout]
+mode = "scrolling"
+
 [output."eDP-2"]
 # mode = "2560x1440@144"
 # position = [0, 0]

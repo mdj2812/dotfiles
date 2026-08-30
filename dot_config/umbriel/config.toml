@@ -9,7 +9,7 @@
 # generated colors here.
 
 [include]
-files = ["laptop.toml", "noctalia.toml"]
+files = ["dock.toml", "noctalia.toml"]
 
 [general]
 autostart = [
@@ -103,7 +103,7 @@ action = "spawn:notify-send 'Bottom right'"
 # Layout ---------------------------------------------------------------------
 
 [layout]
-mode = "scrolling"             # "scrolling" or "dwindle"
+# mode is set per profile in dock.toml (dwindle) or laptop.toml (scrolling)
 gap = 4                        # 0-500
 width_presets = [0.333, 0.5, 0.667] # shared by scrolling and dwindle
 
@@ -230,6 +230,7 @@ follows_mouse_max_scroll = 0.5
 "Mod+Up" = "window-focus-up"
 "Mod+Down" = "window-focus-down"
 "Mod+Ctrl+H" = "output-focus-left"
+"Mod+Ctrl+L" = "output-focus-right"
 "Mod+Minus" = "window-modify-width:-0.1"
 "Mod+Equal" = "window-modify-width:0.1"
 "Mod+Shift+Equal" = "window-cycle-width"
@@ -254,10 +255,6 @@ follows_mouse_max_scroll = 0.5
 # default_pinned = true
 
 [[window_rule]]
-match.app_id = "zen"
-default_width = 1.0
-
-[[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
 default_size = [1020, 900]
@@ -269,15 +266,11 @@ default_size = [800, 600]
 
 [[window_rule]]
 match.app_id = "ghostty"
-default_floating = true
-default_size = [1600, 1000]
 blur = true
 blur_optimized = true
 
 [[window_rule]]
 match.app_id = "kitty"
-default_floating = true
-default_size = [1600, 1000]
 blur = true
 blur_optimized = true
 
