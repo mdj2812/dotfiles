@@ -12,7 +12,7 @@ mode = "2560x1440@60"
 position = [0, 307]
 scale = 1.50
 vrr = "fullscreen"
-workspaces = ["browser", "term", "comms", "game"]
+workspaces = ["browser", "term", "comms", "games"]
 
 [output."DP-10"]
 # LECOO M2712Q — portrait side panel (right of DP-11)
@@ -21,7 +21,7 @@ position = [1707, 0]
 scale = 1.50
 transform = "270"
 vrr = "fullscreen"
-workspaces = ["browser2", "comms2"]
+workspaces = ["1", "2"]
 
 [keybinds]
 "XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up DP-11 10"

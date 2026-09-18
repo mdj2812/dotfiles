@@ -9,7 +9,7 @@
 # generated colors here.
 
 [include]
-files = ["dock.toml", "noctalia.toml"]
+files = ["dock.toml"]
 
 [general]
 autostart = [
@@ -18,7 +18,7 @@ autostart = [
 ]
 # mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
 xwayland = true                # requires restart to change
-show_cheatsheet = true         # show keybinds overlay on startup
+show_cheatsheet = false         # show keybinds overlay on startup
 focus_on_activate = false      # activation requests mark urgent without stealing focus
 
 # [environment]
@@ -57,7 +57,7 @@ corner_radius = 10             # 0-500
 [appearance.blur]
 enabled = true
 optimized = true
-passes = 3                     # 0-8
+passes = 5                     # 0-8
 radius = 3                     # 0-100
 noise = 0.02                   # 0.0-1.0
 brightness = 0.9               # 0.0-2.0
@@ -69,7 +69,6 @@ enabled = true
 softness = 10                  # 0-200, 0 = hard edge
 offset_x = 2                   # -200 to 200
 offset_y = 2
-color = "#0000007F"
 
 # Overview -------------------------------------------------------------------
 
@@ -105,10 +104,10 @@ action = "spawn:notify-send 'Bottom right'"
 [layout]
 # mode is set per profile in dock.toml (dwindle) or laptop.toml (scrolling)
 gap = 4                        # 0-500
-width_presets = [0.333, 0.5, 0.667] # shared by scrolling and dwindle
+extent_presets = [0.333, 0.5, 0.667] # primary and secondary extent fractions
 
 [layout.scrolling]
-default_width_fraction = 0.5   # 0.1-1.0
+default_extent_fraction = 0.5  # 0.1-1.0
 center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
 
 # Workspace layout overrides (see docs/user/outputs.md#workspace-rules)
@@ -232,9 +231,9 @@ follows_mouse_max_scroll = 0.5
 "Mod+Down" = "window-focus-down"
 "Mod+Ctrl+H" = "output-focus-left"
 "Mod+Ctrl+L" = "output-focus-right"
-"Mod+Minus" = "window-modify-width:-0.1"
-"Mod+Equal" = "window-modify-width:0.1"
-"Mod+Shift+Equal" = "window-cycle-width"
+"Mod+Minus" = "window-modify-primary-extent:-0.1"
+"Mod+Equal" = "window-modify-primary-extent:0.1"
+"Mod+Shift+Equal" = "window-cycle-primary-extent"
 "Mod+Ctrl+F" = "window-toggle-maximize"
 "Mod+C" = "window-center"
 "Mod+Shift+T" = "workspace-set-layout:toggle"
@@ -258,12 +257,12 @@ follows_mouse_max_scroll = 0.5
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
-default_size = [1020, 900]
+default_floating_size_px = { width = 1020, height = 900 }
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
-default_size = [800, 600]
+default_floating_size_px = { width = 800, height = 600 }
 
 [[window_rule]]
 match.app_id = "ghostty"
@@ -281,4 +280,7 @@ blur_optimized = true
 match.namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
 blur = true
 blur_ignore_alpha = 0.5
-blur_optimized = false
+blur_optimized = true
+
+[include.optional]
+files = ["noctalia.toml"]
