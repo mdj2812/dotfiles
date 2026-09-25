@@ -9,12 +9,13 @@
 # generated colors here.
 
 [include]
-files = ["dock.toml"]
+files = ["laptop.toml"]
 
 [general]
 autostart = [
   "noctalia",
   "fcitx5",
+  "kanshi",
 ]
 # mod_key = "Super"            # Mod in keybinds; defaults to Super (Alt when nested)
 xwayland = true                # requires restart to change

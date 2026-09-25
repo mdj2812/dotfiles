@@ -1,4 +1,4 @@
-# Laptop-specific Umbriel settings (built-in eDP-2 panel).
+# Laptop-specific Umbriel settings (built-in eDP-1 panel).
 
 [layout]
 mode = "scrolling"
@@ -11,5 +11,5 @@ vrr = "fullscreen"            # "disabled" (default), "always", or "fullscreen"
 workspaces = ["browser", "term", "comms", "games"]
 
 [keybinds]
-"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up eDP-2 10"
-"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down eDP-2 10"
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up eDP-1 10"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down eDP-1 10"

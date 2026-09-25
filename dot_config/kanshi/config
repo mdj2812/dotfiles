@@ -1,0 +1,29 @@
+# Kanshi config for Umbriel dock/laptop auto-switching.
+#
+# Kanshi does not own output geometry here: the Umbriel profile files
+# (dock.toml / laptop.toml) remain the source of truth for mode, position,
+# scale, transform, and VRR. Kanshi only detects the hotplug change, toggles
+# the internal panel, and runs the switcher, which repoints machine.toml and
+# reloads Umbriel.
+#
+# `...output` is the "any number" form: it tolerates the internal panel being
+# absent (lid closed) without failing the whole profile.
+#
+# NOTE: connector names (DP-10/DP-11/eDP-2) are used for matching. If your dock
+# ever enumerates under different connectors after a reboot, replace them with
+# the monitor identity shown by `umbriel outputs` ("<make> <model> <serial>").
+
+# Docked: both external monitors present. The internal panel may or may not be
+# connected depending on the lid, so it is matched optionally.
+profile dock {
+    output DP-10
+    output DP-11
+    ...output eDP-2 disable
+    exec $HOME/.config/umbriel/switch-profile.sh dock
+}
+
+# Undocked: internal panel only.
+profile laptop {
+    output eDP-2 enable
+    exec $HOME/.config/umbriel/switch-profile.sh laptop
+}

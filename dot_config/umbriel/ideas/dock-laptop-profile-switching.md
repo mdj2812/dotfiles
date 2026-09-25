@@ -1,6 +1,45 @@
 # Dock / laptop profile auto-switching (deferred)
 
-Status: **waiting for official Umbriel support** — do not implement the workaround yet.
+Status: **working via kanshi (2026-09-21)** — after updating Umbriel to
+`75e35316ae29`, kanshi auto-swaps the include symlink on dock/undock. Still an
+external workaround; native Umbriel profile support would replace it.
+
+## Resolved: installed build predated protocol-driven output disable
+
+- The running binary is revision `aa9d523`, 30 commits behind this checkout.
+- It logs `output-management: disabling outputs is not supported, use the
+  config 'enabled' key` and fails the whole transaction when a head is disabled.
+- Kanshi always emits an explicit enable/disable per head, so any profile that
+  disables one (the dock profile, to turn off the internal panel) fails, and its
+  `exec` never runs. Protocol-driven disable landed in `61c580b`, which is in
+  this checkout but not in the installed build.
+- Fixed by rebuilding/reinstalling Umbriel (`just install`). Verified: kanshi
+  applies the `dock` profile, logs `configuration for profile 'dock' applied`,
+  and runs the switcher.
+
+## Also fixed while setting this up
+
+- Both profiles targeted `eDP-2`, but the active internal panel is `eDP-1`
+  (`card2-eDP-1` connected; `card1-eDP-2` disconnected). The dock profile's
+  `enabled = false` and the laptop profile's scale/VRR/workspaces never matched
+  it, so dock mode was NOT actually disabling the built-in panel. Renamed to
+  `eDP-1` in `dock.toml`, `laptop.toml`, and the kanshi config. Verified: the
+  internal panel now reports `enabled=False` while docked.
+- Note: `laptop.toml`'s `scale = 1.50` and `vrr = "fullscreen"` on the internal
+  panel take effect for the first time now. Adjust if that is not wanted.
+
+## Implemented workaround (kanshi)
+
+- `config.toml` includes `machine.toml`, a symlink to `dock.toml` or `laptop.toml`.
+- `~/.config/kanshi/config` defines a `dock` profile (DP-10 + DP-11 present,
+  internal `eDP-2` optionally disabled) and a `laptop` profile (`eDP-2` only).
+  Each profile's `exec` calls `~/.config/umbriel/switch-profile.sh <profile>`,
+  which repoints the symlink and runs `umbriel msg config-reload`.
+- `kanshi` is in `general.autostart`.
+- Umbriel profile files stay the source of truth for output geometry; kanshi
+  only triggers the switch and toggles the internal panel.
+- The `...output eDP-2 disable` directive uses kanshi's "any number" form so the
+  profile still matches when the lid is closed and `eDP-2` is not connected.
 
 ## Goal
 
