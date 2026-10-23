@@ -115,6 +115,5 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -v
 
-# Restore history search under vi mode
-bindkey -M viins '^R' history-incremental-search-backward
-bindkey -M vicmd '^R' history-incremental-search-backward
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
